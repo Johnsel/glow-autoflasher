@@ -84,7 +84,7 @@ for (var teensyIndex = 0; teensyIndex < totalTeensies; teensyIndex++) {
 
             searchArray.forEach(function(search) {
                 var replace = replaceDefs[defsFilename][search];
-                fileContent = fileContent.replace(search, replace);
+                fileContent = fileContent.split(search).join(replace);
             });
 
             try {
