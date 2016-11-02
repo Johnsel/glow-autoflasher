@@ -50,8 +50,8 @@ for (var teensyIndex = 0; teensyIndex < totalTeensies; teensyIndex++) {
             '$lastHex': secondHex.toString(16)
         },
         'glow_sensortest/Artnet.cpp': {
-            '$universe1': teensyIndex*2+1,
-            '$universe2': teensyIndex*2+2
+            '$universe1': teensyIndex*2,
+            '$universe2': teensyIndex*2+1
         },
         'glow_sensortest/mqtt_ethernet.cpp': {
             '$tripodNo': teensyIndex
@@ -85,7 +85,7 @@ for (var teensyIndex = 0; teensyIndex < totalTeensies; teensyIndex++) {
             searchArray.forEach(function(search) {
                 var replace = replaceDefs[defsFilename][search];
                 fileContent = fileContent.replace(search, replace);
-            })
+            });
 
             try {
                 fs.writeFileSync(path.join(outputDirectory, defsFilename), fileContent);
